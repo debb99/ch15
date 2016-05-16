@@ -5,8 +5,12 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class MemoList implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2L;
 	public MemoList() {
-		
+		Memos = new ArrayList<>();
 	}
 	
 	public Memo getMemo(int n){
@@ -14,7 +18,7 @@ public class MemoList implements Serializable{
 	}
 	
 	public void add(String top, String mess){
-		now = new Date();
+		Date now = new Date();
 		Memos.add(new Memo(top, now.toString(), mess));
 	}
 	
@@ -22,7 +26,5 @@ public class MemoList implements Serializable{
 		return Memos.size();
 	}
 	
-	Date now;
 	ArrayList<Memo> Memos;
-	
 }
